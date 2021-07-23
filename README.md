@@ -1,6 +1,6 @@
 # go-media-fetcher
 
-A simple GoLang microservice for one of my side-projects to get a direct link to audio from YouTube (and other in the future) videos
+A simple GoLang microservice for one of my side-projects to get a direct link to audio from YouTube videos (and other sources in the future)
 
 ## Usage
 Run:
