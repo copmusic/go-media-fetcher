@@ -1,0 +1,26 @@
+<label>
+    Play
+    <input id="s" type="text" name="s">
+    <input id="submit" type="submit">
+</label>
+
+<br>
+
+<audio id="player" src="#" controls></audio>
+
+<script>
+    let s = document.getElementById('s');
+    let submit = document.getElementById('submit')
+    let player = document.getElementById("player")
+
+    submit.onclick = function () {
+        fetch('http://localhost:8080/stream/get?s=' + s.value)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (jsonResponse) {
+            player.src = jsonResponse.url
+            player.play()
+        })
+    }
+</script>
