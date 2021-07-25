@@ -5,15 +5,19 @@ import (
 	"go-media-fetcher/src/controllers"
 	"go-media-fetcher/src/middleware"
 	"github.com/joho/godotenv"
+	"os"
 )
 
 func init() {
-	if err := godotenv.Load(".env.local"); err != nil {
-		panic("No .env.local file found")
-	}
+	godotenv.Load(".env.local")
+	godotenv.Load(".env")
 }
 
 func main() {
+	if ginMode, exists := os.LookupEnv("GIN_MODE"); exists == true {
+		gin.SetMode(ginMode)
+	}
+
 	r := gin.Default()
 
 	r.Use(middleware.CORSMiddleware())

@@ -14,7 +14,7 @@
     let player = document.getElementById("player")
 
     submit.onclick = function () {
-        fetch('http://localhost:8080/stream/get?s=' + s.value)
+        fetch('http://localhost:8090/stream/get?s=' + s.value)
         .then(function (response) {
             return response.json();
         })
