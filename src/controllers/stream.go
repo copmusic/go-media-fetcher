@@ -23,6 +23,7 @@ func (sc StreamController) Get(c *gin.Context)  {
 		})
 	}
 
+	c.Header("Content-Type", "application/json; charset=utf-8")
 	c.JSON(http.StatusOK, gin.H{
 		"url": streamUrl,
 	})
